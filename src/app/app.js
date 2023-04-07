@@ -1,10 +1,11 @@
 'use strict';
 
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const config = require('./config');
-const cors = require('cors');
+const dotenv = require('dotenv').config();
 
 const app = express();
 const router = express.Router();
@@ -23,14 +24,19 @@ const productRoute = require('../routes/product-route');
 const customerRoute = require('../routes/customer-route');
 const orderRoute = require('../routes/order-route');
 
+//Chama As Variaveis De Ambiente
+const urlHome = process.env.URL_HOME;
+const urlLogin = process.env.URL_LOGIN;
+const urlCadastro = process.env.URL_CADASTRO
+
 // Habilita O CORS
 app.use(function(req, res, next) {
-	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Origin', urlHome, urlLogin, urlCadastro);
 	res.header('Access-Control-Allow-Headers', '*Origen, X-Requested-With, Content-Type, Accept, x-access-token');
 	res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-	app.use(cors());
 	next();
 });
+app.use(cors());
 
 app.use(bodyParser.json({
 	limit: '5mb'
