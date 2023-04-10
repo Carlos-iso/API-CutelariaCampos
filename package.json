@@ -20,7 +20,8 @@
     "http": "^0.0.1-security",
     "jsonwebtoken": "^7.4.0",
     "md5": "^2.3.0",
-    "mongoose": "^7.0.1"
+    "mongoose": "^7.0.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.21"

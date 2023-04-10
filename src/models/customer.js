@@ -4,23 +4,23 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
+    uid: {
+        type: String
+      },
     name: {
         type: String,
         required: [true, 'O Nome É Necessário'],
-        unique: true
+        unique: false
     },
     email: {
         type: String,
         required: [true, 'O E-mail É Necessário'],
-        trim: true,
-        unique: true,
-        index: true
+        unique: false
     },
     password: {
         type: String,
         required: [true, 'A Senha É Necessário'],
-        trim: true,
-        unique: true
+        unique: false
     },
     roles: [{
         type: String,

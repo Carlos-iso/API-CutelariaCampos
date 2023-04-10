@@ -27,7 +27,7 @@ const orderRoute = require('../routes/order-route');
 //Chama As Variaveis De Ambiente
 const urlHome = process.env.URL_HOME;
 const urlLogin = process.env.URL_LOGIN;
-const urlCadastro = process.env.URL_CADASTRO
+const urlCadastro = process.env.URL_CADASTRO;
 
 // Habilita O CORS
 app.use(function(req, res, next) {
