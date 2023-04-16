@@ -66,7 +66,7 @@ exports.post = async (req, res, next) => {
       roles: ["user"],
     });
     res.status(201).send({
-      message: "Cadastrado Bem Sucedido!",
+      message: "Cadastro Bem Sucedido!",
     });
   } catch (e) {
     console.log(e);
