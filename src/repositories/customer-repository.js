@@ -13,6 +13,15 @@ exports.getById = async (id) => {
   return res;
 };
 
+exports.getUidByEmail = async (email) => {
+  const user = await Customer.findOne({ email: email });
+  if (user) {
+    return user.uid;
+  } else {
+    return null;
+  }
+};
+
 exports.getByEmailExist = async (email) => {
   const user = await Customer.findOne({ email });
   return user;
