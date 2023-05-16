@@ -120,6 +120,7 @@ exports.authenticate = async (req, res, next) => {
         _id: customer._id,
         email: customer.email,
         name: customer.name,
+        data: customer.createDate
       },
     });
   } catch (e) {
